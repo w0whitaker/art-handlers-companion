@@ -1,0 +1,26 @@
+{
+  "name": "art-handlers-companion",
+  "version": "1.0.0",
+  "description": "a super webapp for a super group of people",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "start:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w0whitaker/art-handlers-companion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/w0whitaker/art-handlers-companion/issues"
+  },
+  "homepage": "https://github.com/w0whitaker/art-handlers-companion#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1"
+  }
+}
