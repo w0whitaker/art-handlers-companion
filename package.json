@@ -22,5 +22,8 @@
   "homepage": "https://github.com/w0whitaker/art-handlers-companion#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1"
   }
 }

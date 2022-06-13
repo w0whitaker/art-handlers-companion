@@ -1,19 +1,31 @@
 const pictureWidths = [];
 
 function formSubmit(event) {
-  const val = Number.parseInt(form.add_picture.value);
-  pictureWidths.push(val);
-  addToPictureList(val);
-  displayTotal(sumOfPictureWidths(pictureWidths));
+  addToPictureWidthsArray(form.add_picture.value);
+  addWallWidth(form.add_wall.value);
   form.reset();
   event.preventDefault();
 }
 
-function addToPictureList(value) {
+function addWallWidth(val) {
+  displayWallWidth(Number.parseInt(val));
+}
+
+function displayWallWidth(val) {
+  totalWall.textContent = `wall width ${val}`;
+}
+
+function addToPictureWidthsArray(val) {
+  pictureWidths.push(Number.parseInt(val));
+  addToPictureList(Number.parseInt(val));
+  displayTotalWidthOfPictures(sumOfPictureWidths(pictureWidths));
+}
+
+function addToPictureList(val) {
   const newListItem = document.createElement('li');
-  const newListItemContent = document.createTextNode(value);
+  const newListItemContent = document.createTextNode(val);
   newListItem.appendChild(newListItemContent);
-  output.append(newListItem);
+  pictureList.append(newListItem);
 }
 
 function sumOfPictureWidths(arr) {
@@ -24,11 +36,12 @@ function sumOfPictureWidths(arr) {
   );
 }
 
-function displayTotal(sum) {
-  total.textContent = `total width: ${sum}`;
+function displayTotalWidthOfPictures(sum) {
+  totalPictures.textContent = `total width: ${sum}`;
 }
 
 const form = document.getElementById('form');
-const output = document.getElementById('output');
-const total = document.getElementById('total');
+const pictureList = document.getElementById('picture-list');
+const totalPictures = document.getElementById('total-pictures');
+const totalWall = document.getElementById('total-wall');
 form.addEventListener('submit', formSubmit);
