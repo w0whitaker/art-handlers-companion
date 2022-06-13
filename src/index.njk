@@ -1,9 +1,24 @@
 ---
 layout: page.njk
-title: the art handlerz companion
+title: laying out a wall
 ---
 <h2 class="title">{{ title }}</h2>
 
-{% section "bar", "baz" %}
-blah
+{% section "inputs", "enter info:" %}
+  {% form "picture" %}
+  {% form "wall" %}
+  {% form "inset" %}
+{% endsection %}
+{% section "outputs", "results:" %}
+<h4>pictures</h4>
+<hr>
+<ul id="picture-list"></ul>
+<p id="total-pictures"></p>
+<hr>
+<h4>wall</h4>
+<p id="total-wall"></p>
+<hr>
+<h4>inset</h4>
+<p id="total-inset"></p>
+<hr>
 {% endsection %}

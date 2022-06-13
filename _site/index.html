@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <!-- Grab title from the page data and dump it here -->
-  <title>the art handlerz companion</title>
+  <title>laying out a wall</title>
 </head>
 <body>
   <!-- Grab the content from the page data, dump it here, and mark it as safe -->
@@ -15,10 +15,25 @@
   this is the header
 </header>
 <main>
-  <h2 class="title">the art handlerz companion</h2>
+  <h2 class="title">laying out a wall</h2>
 
-<section class=bar content><h3>baz</h3><div class="container">
-blah
+<section class=inputs content><h3>enter info:</h3><div class="container">
+  <form id="picture-form"><h4>picture</h4><ul><li><label for="input_field">value:</label><input type="text" id="picture" name="enter_picture"></li><li><button type="submit">submit</button></li></ul></form>
+  <form id="wall-form"><h4>wall</h4><ul><li><label for="input_field">value:</label><input type="text" id="wall" name="enter_wall"></li><li><button type="submit">submit</button></li></ul></form>
+  <form id="inset-form"><h4>inset</h4><ul><li><label for="input_field">value:</label><input type="text" id="inset" name="enter_inset"></li><li><button type="submit">submit</button></li></ul></form>
+</div></section>
+<section class=outputs content><h3>results:</h3><div class="container">
+<h4>pictures</h4>
+<hr>
+<ul id="picture-list"></ul>
+<p id="total-pictures"></p>
+<hr>
+<h4>wall</h4>
+<p id="total-wall"></p>
+<hr>
+<h4>inset</h4>
+<p id="total-inset"></p>
+<hr>
 </div></section>
 </main>
 <footer>
@@ -26,35 +41,29 @@ blah
 </footer>
   <script>const pictureWidths = [];
 
-function formSubmit(event) {
-  addToPictureWidthsArray(form.add_picture.value);
-  addWallWidth(form.add_wall.value);
-  form.reset();
+function pictureFormSubmit(event) {
+  pictureHandler(pictureForm.enter_picture.value);
+  pictureForm.reset();
   event.preventDefault();
 }
 
-function addWallWidth(val) {
-  displayWallWidth(Number.parseInt(val));
-}
-
-function displayWallWidth(val) {
-  totalWall.textContent = `wall width ${val}`;
-}
-
-function addToPictureWidthsArray(val) {
+function pictureHandler(val) {
+  console.log(`val @ pictureHandler: ${val}`);
   pictureWidths.push(Number.parseInt(val));
   addToPictureList(Number.parseInt(val));
-  displayTotalWidthOfPictures(sumOfPictureWidths(pictureWidths));
+  console.log(`sumOfArray: ${sumOfArray(pictureWidths)}`);
+  displayTotalWidthOfPictures(sumOfArray(pictureWidths));
 }
 
 function addToPictureList(val) {
+  console.log(`val @ addToPictureList: ${val}`);
   const newListItem = document.createElement('li');
   const newListItemContent = document.createTextNode(val);
   newListItem.appendChild(newListItemContent);
   pictureList.append(newListItem);
 }
 
-function sumOfPictureWidths(arr) {
+function sumOfArray(arr) {
   const initialValue = 0;
   return arr.reduce(
     (previousValue, currentValue) => previousValue + currentValue,
@@ -66,11 +75,46 @@ function displayTotalWidthOfPictures(sum) {
   totalPictures.textContent = `total width: ${sum}`;
 }
 
-const form = document.getElementById('form');
+function wallFormSubmit(event) {
+  wallHandler(wallForm.enter_wall.value);
+  wallForm.reset();
+  event.preventDefault();
+}
+
+function wallHandler(val) {
+  displayWallWidth(Number.parseInt(val));
+}
+
+function displayWallWidth(val) {
+  totalWall.textContent = `width: ${val}`;
+}
+
+function insetFormSubmit(event) {
+  insetHandler(insetForm.enter_inset.value);
+  insetForm.reset();
+  event.preventDefault();
+}
+
+function insetHandler(val) {
+  let total = val * 2;
+  displayInsetWidth(Number.parseInt(total));
+}
+
+function displayInsetWidth(val) {
+  totalInset.textContent = `inset: ${val}`;
+}
+
+const pictureForm = document.getElementById('picture-form');
+const wallForm = document.getElementById('wall-form');
+const insetForm = document.getElementById('inset-form');
 const pictureList = document.getElementById('picture-list');
 const totalPictures = document.getElementById('total-pictures');
 const totalWall = document.getElementById('total-wall');
-form.addEventListener('submit', formSubmit);
+const totalInset = document.getElementById('total-inset');
+
+pictureForm.addEventListener('submit', pictureFormSubmit);
+wallForm.addEventListener('submit', wallFormSubmit);
+insetForm.addEventListener('submit', insetFormSubmit);
 </script>
 </body>
 </html>
