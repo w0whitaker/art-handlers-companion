@@ -12,7 +12,8 @@ const forms = (formType) => {
 };
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('src/style.css');
+  eleventyConfig.addWatchTarget('./src/sass/');
+  eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/main.js');
   eleventyConfig.addPairedShortcode('section', section);
   eleventyConfig.addShortcode('form', forms);
