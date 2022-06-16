@@ -63,6 +63,14 @@ ul {
 }
 
 /* functions */
+article {
+  margin-top: 3rem;
+}
+
+section {
+  margin-top: 1.5rem;
+}
+
 .container {
   max-width: 100%;
   display: flex;
@@ -84,6 +92,10 @@ form[id*=-form] input[name*=enter_] {
 
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+:is(h2, h3, h4) {
+  text-align: center;
 }
 
 ul {

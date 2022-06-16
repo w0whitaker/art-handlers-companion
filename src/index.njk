@@ -2,21 +2,23 @@
 layout: page.njk
 title: laying out a wall
 ---
-<h2 class="title">{{ title }}</h2>
+<article>
+  <h2 class="title">{{ title }}</h2>
 
-{% section "inputs", "enter info:" %}
-  {% form "picture" %}
-  {% form "wall" %}
-  {% form "inset" %}
-{% endsection %}
-{% section "outputs", "results:" %}
-<h4>pictures</h4>
-<ul id="picture-list"></ul>
-<p id="total-pictures"></p>
-<h4>wall</h4>
-<p id="total-wall"></p>
-<h4>inset</h4>
-<p id="inset-amount"></p>
-{% endsection %}
-<button id="calculate" type="button">calculate</button>
-<p id="base-gap"></p>
+  {% section "inputs", "enter info:" %}
+    {% form "picture" %}
+    {% form "wall" %}
+    {% form "inset" %}
+  {% endsection %}
+  {% section "outputs", "results:" %}
+  <h4>pictures</h4>
+  <ul id="picture-list"></ul>
+  <p id="total-pictures"></p>
+  <h4>wall</h4>
+  <p id="total-wall"></p>
+  <h4>inset</h4>
+  <p id="inset-amount"></p>
+  {% endsection %}
+  <button id="calculate" type="button">calculate</button>
+  <p id="base-gap"></p>
+</article>
