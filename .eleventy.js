@@ -1,12 +1,10 @@
 const classNames = require('classnames');
 
-const section = (content, cssClass, title) => {
+const section = (content, sectionId, title) => {
   return `
-  <section class=${classNames(cssClass, 'content')}>
+  <section id="${sectionId}" class="content">
   <h3>${title}</h3>
-  <div class="container">
-    ${content}
-  </div>
+  ${content}
   </section>
   `;
 };

@@ -6,18 +6,43 @@ title: laying out a wall
   <h2 class="title">{{ title }}</h2>
 
   {% section "inputs", "enter info:" %}
+  <div class="container">
     {% form "picture" %}
     {% form "wall" %}
     {% form "inset" %}
+  </div>
   {% endsection %}
   {% section "outputs", "results:" %}
-  <h4>pictures</h4>
-  <ul id="picture-list"></ul>
-  <p id="total-pictures"></p>
-  <h4>wall</h4>
-  <p id="total-wall"></p>
-  <h4>inset</h4>
-  <p id="inset-amount"></p>
+  <div id="layout">
+    <h4>pictures</h4>
+    <ul>
+      <template id="picture-list" class="container">
+      </template>
+    </ul>
+  </div>
+  <div id="totals">
+    <h4>totals</h4>
+    <div class="container">
+      <div id="pictures" class="total-container">
+        <h5>pictures</h5>
+        <p>
+          <span id="total-pictures" class="total-sum"></span>
+        </p>
+      </div>
+      <div id="wall" class="total-container">
+        <h5>wall</h5>
+          <p>
+            <span id="total-wall" class="total-sum"></span>
+          </p>
+      </div>
+      <div id="inset" class="total-container">
+        <h5>inset</h5>
+          <p>
+            <span id="total-inset" class="total-sum"></span>
+          </p>
+      </div>
+    </div>
+  </div>
   {% endsection %}
   <button id="calculate" type="button">calculate</button>
   <p id="base-gap"></p>

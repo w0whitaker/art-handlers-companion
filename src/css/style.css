@@ -64,7 +64,7 @@ ul {
 
 /* functions */
 article {
-  margin-top: 3rem;
+  margin: 3rem 1rem;
 }
 
 section {
@@ -78,24 +78,64 @@ section {
   gap: 16px;
 }
 
-form[id*=-form] {
+form[id*=-form],
+.total-container {
+  margin-top: 1.5rem;
   flex: 0 1 calc(
       33.3333333333% - 10.6666666667px
     );
 }
-form[id*=-form] .container {
+form[id*=-form] .container,
+.total-container .container {
   justify-content: center;
 }
-form[id*=-form] input[name*=enter_] {
+form[id*=-form] input[name*=enter_],
+.total-container input[name*=enter_] {
   max-width: 8ch;
+}
+
+.total-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.total-container p {
+  padding: 1rem 0;
+}
+
+#picture-list {
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
+  min-height: 4rem;
+  overflow-x: scroll;
+}
+
+#picture-list li {
+  flex: 1 1 auto;
+  padding: 0.5rem;
 }
 
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-:is(h2, h3, h4) {
+h4 {
   text-align: center;
+}
+
+.total-sum {
+  text-align: center;
+}
+
+#picture-list,
+.total-container {
+  background-color: lightblue;
+}
+
+#picture-list li {
+  border: 1px solid black;
+  background-color: white;
 }
 
 ul {

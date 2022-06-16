@@ -10,7 +10,7 @@ const insetForm = document.getElementById('inset-form');
 const pictureList = document.getElementById('picture-list');
 const totalPictures = document.getElementById('total-pictures');
 const totalWall = document.getElementById('total-wall');
-const insetAmt = document.getElementById('inset-amount');
+const insetAmt = document.getElementById('total-inset');
 const baseGap = document.getElementById('base-gap');
 
 pictureForm.addEventListener('submit', pictureFormSubmit);
@@ -46,7 +46,7 @@ function sumOfArray(arr) {
 }
 
 function displayTotalWidthOfPictures(sum) {
-  totalPictures.textContent = `total width: ${sum}`;
+  totalPictures.textContent = sum;
 }
 
 wallForm.addEventListener('submit', wallFormSubmit);
@@ -63,7 +63,7 @@ function wallHandler(val) {
 }
 
 function displayWallWidth(val) {
-  totalWall.textContent = `width: ${val}`;
+  totalWall.textContent = val;
 }
 
 insetForm.addEventListener('submit', insetFormSubmit);
@@ -81,7 +81,7 @@ function insetHandler(val) {
 }
 
 function displayInsetWidth(val) {
-  insetAmt.textContent = `inset: ${insetValue}`;
+  insetAmt.textContent = insetValue * 2;
 }
 
 function doTheMath(event) {
