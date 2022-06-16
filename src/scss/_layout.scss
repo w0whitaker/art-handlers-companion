@@ -1,5 +1,24 @@
+@use '_utilities.scss' as u with (
+  $widthOfGap: 16,
+  $boxBase: 3
+);
+
 .container {
   max-width: 100%;
   display: flex;
   flex-flow: row wrap;
+  gap: #{u.$widthOfGap}px;
+}
+
+form[id*='-form'] {
+  flex: 0 1
+    calc(
+      #{u.nomBoxWidth(u.$boxBase)}% - #{u.adjBoxWidth(u.$boxBase, u.$widthOfGap)}px
+    );
+  .container {
+    justify-content: center;
+  }
+  input[name*='enter_'] {
+    max-width: 8ch;
+  }
 }

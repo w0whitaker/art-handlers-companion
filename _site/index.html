@@ -16,13 +16,41 @@
 </header>
 <main>
   <h2 class="title">laying out a wall</h2>
-
-<section class=inputs content><h3>enter info:</h3><div class="container">
-  <form id="picture-form"><h4>picture</h4><ul><li><label for="input_field">value:</label><input type="text" id="picture" name="enter_picture"></li><li><button type="submit">submit</button></li></ul></form>
-  <form id="wall-form"><h4>wall</h4><ul><li><label for="input_field">value:</label><input type="text" id="wall" name="enter_wall"></li><li><button type="submit">submit</button></li></ul></form>
-  <form id="inset-form"><h4>inset</h4><ul><li><label for="input_field">value:</label><input type="text" id="inset" name="enter_inset"></li><li><button type="submit">submit</button></li></ul></form>
-</div></section>
-<section class=outputs content><h3>results:</h3><div class="container">
+  <section class=inputs content>
+  <h3>enter info:</h3>
+  <div class="container">
+  <form id="picture-form">
+  <h4>picture</h4>
+    <div class="container">
+      <label for="picture">value:</label>
+      <input type="text" inputmode="numeric" id="picture" name="enter_picture">
+      <button type="submit">submit</button>
+      <button type="submit">reset</button>
+    </div>
+  </form>
+  <form id="wall-form">
+  <h4>wall</h4>
+    <div class="container">
+      <label for="wall">value:</label>
+      <input type="text" inputmode="numeric" id="wall" name="enter_wall">
+      <button type="submit">submit</button>
+      <button type="submit">reset</button>
+    </div>
+  </form>
+  <form id="inset-form">
+  <h4>inset</h4>
+    <div class="container">
+      <label for="inset">value:</label>
+      <input type="text" inputmode="numeric" id="inset" name="enter_inset">
+      <button type="submit">submit</button>
+      <button type="submit">reset</button>
+    </div>
+  </form>
+  </div>
+  </section>
+  <section class=outputs content>
+  <h3>results:</h3>
+  <div class="container">
 <h4>pictures</h4>
 <ul id="picture-list"></ul>
 <p id="total-pictures"></p>
@@ -30,8 +58,9 @@
 <p id="total-wall"></p>
 <h4>inset</h4>
 <p id="inset-amount"></p>
-</div></section>
-<button id="calculate" type="button">calculate</button>
+  </div>
+  </section>
+<p><button id="calculate" type="button">calculate</button></p>
 <p id="base-gap"></p>
 </main>
 <footer>

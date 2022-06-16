@@ -1,10 +1,12 @@
 ---
 layout: base.njk
+templateEngineOverride: njk, md
 ---
 <header>
   this is the header
 </header>
 <main>
+  {# {% include '_decimals.md' %} #}
   {{ content | safe }}
 </main>
 <footer>
