@@ -13,37 +13,45 @@ title: laying out a wall
   </div>
   {% endsection %}
   {% section "outputs", "results:" %}
-  <div id="layout">
-    <h4>pictures</h4>
-    <ul>
-      <template id="picture-list" class="container">
-      </template>
-    </ul>
-  </div>
-  <div id="totals">
-    <h4>totals</h4>
-    <div class="container">
-      <div id="pictures" class="total-container">
-        <h5>pictures</h5>
-        <p>
-          <span id="total-pictures" class="total-sum"></span>
-        </p>
-      </div>
-      <div id="wall" class="total-container">
-        <h5>wall</h5>
+  <div class="container">
+    <div id="layout" class="outputs-container">
+      <h4>pictures</h4>
+      <ul>
+        <template id="picture-list" class="container outputs-display">
+        </template>
+      </ul>
+    </div>
+    <div id="totals" class="outputs-container">
+      <h4>totals</h4>
+      <div class="container">
+        <div id="pictures" class="total-container">
+          <h5>pictures</h5>
           <p>
-            <span id="total-wall" class="total-sum"></span>
+            <span id="total-pictures" class="total-sum"></span>
           </p>
+        </div>
+        <div id="wall" class="total-container">
+          <h5>wall</h5>
+            <p>
+              <span id="total-wall" class="total-sum"></span>
+            </p>
+        </div>
+        <div id="inset" class="total-container">
+          <h5>inset</h5>
+            <p>
+              <span id="total-inset" class="total-sum"></span>
+            </p>
+        </div>
       </div>
-      <div id="inset" class="total-container">
-        <h5>inset</h5>
-          <p>
-            <span id="total-inset" class="total-sum"></span>
-          </p>
-      </div>
+    </div>
+    <div id="gaps" class="outputs-container">
+      <h4>gaps</h4>
+      <p>
+        <template id="base-gap" class="container outputs-display">
+        </template>
+      </p>
+      <button id="calculate" type="button">calculate</button>
     </div>
   </div>
   {% endsection %}
-  <button id="calculate" type="button">calculate</button>
-  <p id="base-gap"></p>
 </article>

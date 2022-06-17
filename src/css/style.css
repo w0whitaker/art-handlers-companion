@@ -78,6 +78,10 @@ section {
   gap: 16px;
 }
 
+.outputs-container {
+  flex: 1 100%;
+}
+
 form[id*=-form],
 .total-container {
   margin-top: 1.5rem;
@@ -103,11 +107,14 @@ form[id*=-form] input[name*=enter_],
   padding: 1rem 0;
 }
 
+.outputs-display {
+  align-items: center;
+  min-height: 4rem;
+}
+
 #picture-list {
   flex-direction: row-reverse;
   flex-wrap: nowrap;
-  align-items: center;
-  min-height: 4rem;
   overflow-x: scroll;
 }
 
@@ -128,7 +135,7 @@ h4 {
   text-align: center;
 }
 
-#picture-list,
+.outputs-display,
 .total-container {
   background-color: lightblue;
 }

@@ -18,6 +18,10 @@ section {
   gap: #{u.$widthOfGap}px;
 }
 
+.outputs-container {
+  flex: 1 100%;
+}
+
 form[id*='-form'],
 .total-container {
   margin-top: 1.5rem;
@@ -43,11 +47,14 @@ form[id*='-form'],
   }
 }
 
+.outputs-display {
+  align-items: center;
+  min-height: 4rem;
+}
+
 #picture-list {
   flex-direction: row-reverse;
   flex-wrap: nowrap;
-  align-items: center;
-  min-height: 4rem;
   overflow-x: scroll;
 }
 
